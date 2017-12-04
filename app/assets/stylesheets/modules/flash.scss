@@ -1,0 +1,23 @@
+// .notification {
+//   .notice {
+//     background-color: $light_blue;
+//     color: $white;
+//     text-align: center;
+//   }
+//
+//   .alert {
+//     background-color: $alert_orange;
+//     color: $white;
+//     text-align: center;
+//   }
+// }
+.flash {
+  color: $white;
+  text-align: center;
+  &__alert{
+    background-color: $alert_orange;
+  }
+  &__notice {
+    background-color: $light_blue;
+  }
+}
