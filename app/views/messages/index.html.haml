@@ -1,9 +1,77 @@
-%header
-  %p チャットグループが作成されました。
-.contents.clearfix
-  .left-heading
-    %h1.title Hair OLIVE
-  .right-heading
-  .left-content
-  .right-over-content
-  .right-under-content
+-# %header
+-#   .bot
+-#     %h1.message チャットグループが作成されました。
+-# .contents.clearfix
+-#   .left__content
+-#     .left-heading
+-#       %h1.name key
+-#     .group_box
+-#       %h1.group_name hoge
+-#       %h2.group_text fuga
+-#   .right__content
+-#     .right-heading
+-#       %h1.group first_group
+-#       %h2.members members: key
+-#     .right-over-content
+-#       .chat
+-#         %h1.user ai
+-#         %h2.tweet ia
+-#     .right-under-content
+-#       .send_message
+-#         %h2.type_message ue
+.wrapper
+
+  = render 'shared/side_bar'
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+    .form
+      %form
+        %input.form__message
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}

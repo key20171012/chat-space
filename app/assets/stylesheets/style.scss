@@ -1,57 +1,106 @@
-header {
-  background-color: #38AEF0;
-  p {
-    text-align: center;
-    color: white;
-  }
-}
-
-.contents {
-  background-color: #C0C0C0;
-  width: 960px;
-  margin: 10px auto;
-  .left-heading {
-    height: 100px;
-    width: 300px;
-    background-color: #253141;
-    // margin: 0 auto;
-    font-size: 16px;
-    float: left;
-    .title {
-        color: blue;
-        text-align: center;
-        margin: auto;
-    }
-  }
-  .right-heading {
-    height: 100px;
-    width: 960px;
-    background-color: #CCCCCC;
-    margin: 0 auto;
-  }
-    .left-content {
-      height: 400px;
-      width: 640px;
-      background-color: white;
-      float: left;
-    }
-    .right-over-content {
-      height: 370px;
-      width: 320px;
-      background-color: #f9f9f9;
-      float: left;
-    }
-    .right-under-content {
-      height: 370px;
-      width: 320px;
-      background-color: #f9f9f9;
-      float: left;
-    }
-
-}
-
-.clearfix:after {
-  content: "";
-  clear: both;
-  display: block;
-}
+// header {
+//   .bot{
+//     background-color: #38AEF0;
+//     h1.message {
+//       text-align: center;
+//       color: white;
+//     }
+//   }
+// }
+// .contents.clearfix {
+//   .left__content {
+//     height: 100vh;  //要確認
+//     width: 300px;
+//     background-color: #2f3e51;
+//     float: left;
+//     .left-heading {
+//       height: 100px;
+//       background-color: #253141;
+//       margin-bottom: 20px;
+//       h1.name {
+//           color: #FFFFFF;
+//           font-size: 16px;
+//           font-weight: bold;
+//           text-align: left;
+//           padding-top: 35px;
+//           padding-left: 20px;
+//       }
+//     }
+//     .group_box{
+//       height: 80px;
+//       background-color: #2f3e51;
+//       h1.group_name{
+//         color: #FFFFFF;
+//         font-size: 15px;
+//         padding-left: 20px;
+//         margin-bottom: 5px;
+//       }
+//       h2.group_text{
+//         color: #FFFFFF;
+//         font-size: 11px;
+//         padding-left: 20px;
+//       }
+//     }
+//   }
+//   .right__content{
+//     height: 100vh;
+//     width: calc(100vw - 300px); //要確認
+//     float: left;
+//     .right-heading {
+//       height: 100px;
+//       h1.group{
+//         color: #333333;
+//         font-size: 20px;
+//         text-align: left;
+//         padding-top: 35px;
+//         padding-left: 20px;
+//       }
+//       h2.members{
+//         color: #999999;
+//         font-size: 12px;
+//         text-align: left;
+//         padding-bottom: 20px;
+//         padding-left: 20px;
+//       }
+//     }
+//     .right-over-content {
+//       height: calc(100vh - 190px);
+//       width: 320px;
+//       color: #AAAAAA; //要確認
+//       padding-left: 40px;
+//       .chat{
+//         h1.user{
+//           padding-top: 46px;
+//           padding-bottom: 10px;
+//           color: #434A54;
+//           font-size: 16px;
+//           font-weight: bold;
+//         }
+//         h2.tweet{
+//           padding-bottom: 40px;
+//           color: #434A54;
+//           font-size: 14px;
+//         }
+//
+//       }
+//     }
+//     .right-under-content {
+//       height: 90px;
+//       padding-top: 20px;
+//       padding-bottom: 20px;
+//       padding-left: 50px;
+//       padding-right: 40px;
+//       background-color: #38AEF0;
+//       .send_message{
+//         h2.type_message{
+//           font-style: italic;
+//         }
+//       }
+//     }
+//   }
+//   .clearfix:after {
+//     content: "";
+//     clear: both;
+//     display: block;
+//   }
+// }
