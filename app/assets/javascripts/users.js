@@ -28,7 +28,6 @@ $(function() {
       contentType: false,
       dataType: 'json'
     })
-
     .done(function(data){
       var $form = $('#user-search-result')
       $form.empty();
