@@ -1,17 +1,21 @@
 class MessagesController < ApplicationController
-  before_action :set_group  # groupデータの取得
+  before_action :index
 
   def index
-    @message = @group.messages.new
-    @messages = @group.messages.includes(:user)
+    @message = Message.new
+    @group = Group.find(params[:group_id])
   end
 
   def create
-    @message = @group.messages.new(message_params)
+    @message = Message.new(message_params)
     if @message.save
-      redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
+      respond_to do |format|
+        format.html { redirect_to group_messages_path, notice: 'メッセージが送信されました' } # この中はHTMLリクエストの場合に呼ばれる
+        format.json # この中はJSONリクエストの場合に呼ばれる
+      end
+      # 【js導入前】redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
     else
-      @messages = @group.messages.includes(:user)
+      @messages = @group.messages.includes(:user)  #これいる？
       flash.now[:alert] = 'メッセージを入力してください。'
       render :index
     end
@@ -20,11 +24,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
-  end
-
-  def set_group
-    @group = Group.find(params[:group_id])  # groupデータの取得
+    params.require(:message).permit(:content, :image).merge(group_id: params[:group_id], user_id: current_user.id)
   end
 
 end

@@ -1,0 +1,14 @@
+!!!
+.left-content
+  .left-content__top
+    = current_user.name
+    = link_to edit_user_path(current_user) do
+      %i.fa.fa-cog
+    = link_to new_group_path do
+      %i.fa.fa-edit
+  - current_user.groups.each do |group|
+    .left-content__main
+      .left-content__main--groupname
+        = link_to group.name, group_messages_path(group), id: "groupname"
+      .left-content__main--message
+        = chatinfo(group)

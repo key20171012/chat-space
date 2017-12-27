@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'groups#index'
-  resources :users, only: [:edit, :update]
-  resources :groups, only: [:new, :create, :edit, :update] do
-    resources :messages, only: [:index, :create]
+  devise_for :users #sign_upとsign_inとかはこちらかな？
+  root 'groups#index' #初めは'messages#index'だった
+  resources :users, only: [:index, :edit, :update]  #ログインユーザーの編集＆更新
+  resources :groups, only: [:index, :new, :create, :edit, :update] do
+    resources :messages, only: [:index, :create]  #groupsのデータを引っ張れる？
   end
 end

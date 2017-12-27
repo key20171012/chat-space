@@ -1,0 +1,10 @@
+.flash {
+  color: $flashmessage-font-color;
+  text-align: center;
+  &__alert{
+    background-color: $flashmessage-alert-color;
+  }
+  &__notice {
+    background-color: $flashmessage-notice-color;
+  }
+}
