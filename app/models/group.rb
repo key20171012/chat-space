@@ -5,7 +5,7 @@ class Group < ApplicationRecord
 
   validates :name, presence: true
 
-  def show_last_message
-    messages.last&.content || "まだメッセージはありません。"
-  end
+  # def show_last_message
+  #   messages.present? ? messages.last.content : "まだメッセージはありません。"
+  # end
 end

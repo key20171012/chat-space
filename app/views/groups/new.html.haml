@@ -1,3 +1,65 @@
 .chat-group-form
   %h1 新規チャットグループ
-  = render 'form', { group: @group }
+  = form_for(@group) do |f|
+    - if @group.errors.any?
+      .chat-group-form__errors
+        %h2
+          = @group.errors.count
+          件のエラーが発生しました。
+          %ul
+            - @group.errors.full_messages.each do |message|
+              = message
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label :name, class: "chat-group-form__label"
+      .chat-group-form__field--right
+        = f.text_field :name, placeholder: "グループ名を入力してください", class: "chat-group-form__input"
+    .chat-group-form__field.clearfix
+      = render partial: "shared/chat-form"
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+        = f.label :チャットメンバー, class: "chat-group-form__label"
+      .chat-group-form__field--right
+        %li
+        #chat-group-user-8.chat-group-user.clearfix.js-chat-member
+          %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}
+            %p.chat-group-user__name
+              = current_user.name
+        #chat-group-users
+    .chat-group-form__field.clearfix
+      .chat-group-form__field--left
+      .chat-group-form__field--right
+        = f.submit "Save",class: "chat-group-form__action-btn"
+
+-# .chat-group-form
+-#   %h1 新規チャットグループ
+-#   = form_for @group do |f|
+-#     - if @group.errors.any?
+-#       .chat-group-form__errors
+-#         %h2
+-#           = @group.errors.count
+-#           件のエラーが発生しました。
+-#           %ul
+-#             - @group.errors.full_messages.each do |message|
+-#               = message
+-#     .chat-group-form__field.clearfix
+-#       .chat-group-form__field--left
+-#         = f.label :name, class: "chat-group-form__label"
+-#       .chat-group-form__field--right
+-#         = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください"
+-#     .chat-group-form__field.clearfix
+-#       = render partial: "shared/chat-form"
+-#     .chat-group-form__field.clearfix
+-#       .chat-group-form__field--left
+-#         = f.label :チャットメンバー, class: "chat-group-form__label"
+-#       .chat-group-form__field--right
+-#         %li
+-#         #chat-group-user-8.chat-group-user.clearfix.js-chat-member
+-#           %input{name: "group[user_ids][]", type: "hidden", value: "#{current_user.id}"}
+-#             %p.chat-group-user__name
+-#               = current_user.name
+-#         #chat-group-users
+-#     .chat-group-form__field.clearfix
+-#       .chat-group-form__field--left
+-#       .chat-group-form__field--right
+-#         = f.submit "Save",class: "chat-group-form__action-btn"

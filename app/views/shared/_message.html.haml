@@ -1,0 +1,9 @@
+- @group.messages.each do |message|
+  .main-content__center__chatinfo
+    .main-content__center__chatinfo__username
+      %p= message.user.present? ? message.user.name : "no_name"
+    .main-content__center__chatinfo__date
+      %p= message.updated_at.present? ? message.updated_at.strftime("%Y/%m/%d %H:%M:%S") : "no_date"
+    .main-content__center__chatinfo__message
+      %p= message.content
+      = image_tag message.image

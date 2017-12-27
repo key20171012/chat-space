@@ -1,0 +1,19 @@
+!!!
+.main-content
+  .main-content__top
+    .main-content__top__groupinfo
+      .main-content__top__groupinfo__groupname
+        = @group.name
+      .main-content__top__groupinfo__members
+        %p Members:&nbsp;
+        = render partial: "shared/member"
+    .main-content__top__edit-button
+      = link_to "Edit", edit_group_path(@group.id), id: "edit"
+  .main-content__center
+    = render partial: "shared/message"
+  .main-content__bottom
+    = form_for [@group, @message], html: { class: 'form js-form' } do |f|
+      = f.text_field :content, placeholder: "type a message", class: "main-content__bottom__messagebox js-form__text-field"
+      = f.label "image", { class: "fa fa-image"} do
+        = f.file_field :image, style: "display: none;", class: "js-form__image"
+      = f.submit "Send", class: "main-content__bottom__send-button"

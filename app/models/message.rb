@@ -1,11 +1,10 @@
 class Message < ApplicationRecord
   belongs_to :group
   belongs_to :user
-  validates :content, presence: true, if: :messages_blank?
+  validates :content, presence: true, unless: :have_image?
   mount_uploader :image, ImageUploader
 
-
-  def messages_blank?
-    content == nil && image == nil
+  def have_image?
+    image.present?
   end
 end
