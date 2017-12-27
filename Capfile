@@ -18,8 +18,8 @@ require 'capistrano3/unicorn'
 # or
 
 ########################################
-# require "capistrano/scm/git"
-# install_plugin Capistrano::SCM::Git
+require "capistrano/scm/git"
+install_plugin Capistrano::SCM::Git
 # ここは元々あったやつ
 ##########################################
 
