@@ -139,7 +139,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.2)
-    mysql2 (0.4.10)
+    mysql2 (0.5.3)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
@@ -284,7 +284,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   mini_magick
-  mysql2 (>= 0.3.18, < 0.5)
+  mysql2 (>= 0.3.18, < 0.6)
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.1)
